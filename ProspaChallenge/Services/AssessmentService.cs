@@ -23,11 +23,23 @@ namespace ProspaChallenge.Services
                     Decision = "Qualified"
                 };
 
-            var decision = validationResult.Errors
-                .Select(x => x.CustomState.ToString())
-                .Any(state => string.IsNullOrEmpty(state) || state == "Unknown" || state == "Unqualified") ? 
-                    "Unqualified" : 
-                    "Qualified";
+            var errorStates = validationResult.Errors
+                .Select(x => x.CustomState.ToString()).ToList();
+
+            var decision = string.Empty;
+            if (errorStates.All(state => state == "Qualified"))
+            {
+                decision = "Qualified";
+            }
+            else
+            {
+                if (errorStates.Any(s => s == "Unknown" || string.IsNullOrEmpty(s)))
+                {
+                    decision = "Unknown";
+                }
+                else
+                    decision = "Unqualified";
+            }
             return new AssessmentResult()
             {
                 Decision = decision,
