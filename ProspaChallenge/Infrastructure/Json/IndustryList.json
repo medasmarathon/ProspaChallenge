@@ -1,0 +1,12 @@
+{
+  "Banned": [
+    "Banned Industry A",
+    "Banned Industry BB",
+    "Banned Industry CCC"
+  ],
+  "Allowed": [
+    "Allowed Industry 1",
+    "Allowed Industry 22",
+    "Allowed Industry 333"
+  ]
+}
