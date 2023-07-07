@@ -28,6 +28,10 @@ namespace ProspaChallenge.Application.Validation
                 .WithMessage("Not a valid Phone format")
                 .WithState(lead => "Unknown");
 
+            RuleFor(lead => lead.CitizenshipStatus).NotNull()
+                .WithState(lead => "Unknown")
+                .WithMessage("Not a valid CitizenshipStatus");
+
             RuleFor(lead => lead.CountryCode)
                 .Cascade(CascadeMode.Stop)
                 .Length(2)

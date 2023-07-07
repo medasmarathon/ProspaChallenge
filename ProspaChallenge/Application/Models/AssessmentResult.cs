@@ -5,7 +5,7 @@ namespace ProspaChallenge.Application.Models
     public class AssessmentResult
     {
         public string Decision { get; set; } = "Unknown";
-        public List<FieldValidationResult> ValidationResult { get; set; } = new();
+        public List<FieldValidationResult>? ValidationResult { get; set; }
     }
 
     public class FieldValidationResult

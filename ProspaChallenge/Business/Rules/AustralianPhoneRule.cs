@@ -34,7 +34,7 @@ namespace ProspaChallenge.Business.Rules
             {
                 "02", "03", "07", "08"
             };
-            var isOfLandlinePrefix = landlinePrefix.All(pf => phoneNumber.StartsWith(pf));
+            var isOfLandlinePrefix = landlinePrefix.Any(pf => phoneNumber.StartsWith(pf));
             if (!isOfLandlinePrefix) return false;
 
             return Regex.IsMatch(phoneNumber.Substring(2), @"^\d+$");

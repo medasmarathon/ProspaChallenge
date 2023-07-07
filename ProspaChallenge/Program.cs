@@ -34,6 +34,7 @@ builder.Services.AddScoped<IPhoneRule, AustralianPhoneRule>();
 builder.Services.AddScoped<ITimeTradingRule, TimeTradingRule>();
 builder.Services.AddScoped<IBusinessNumberRule, BusinessNumberRule>();
 builder.Services.AddScoped<IIndustryRule, IndustryRule>();
+builder.Services.AddScoped<ILoanAmountRule, LoanAmountRule>();
 builder.Services.AddScoped<IValidator<Lead>, LeadValidator>();
 
 builder.Services.AddScoped<IIndustryRepository, IndustryRepository>();

@@ -10,7 +10,7 @@ namespace ProspaChallenge.Business.Models
         public string PhoneNumber { get; set; } = string.Empty;
         public string BusinessNumber { get; set; } = string.Empty;
         public decimal LoanAmount { get; set; } = new();
-        public CitizenshipStatus CitizenshipStatus { get; set; }
+        public CitizenshipStatus? CitizenshipStatus { get; set; }
         public float TimeTrading { get; set; }
         public string CountryCode { get; set; } = string.Empty;
         public string Industry { get; set; } = string.Empty;
@@ -19,7 +19,6 @@ namespace ProspaChallenge.Business.Models
     public enum CitizenshipStatus
     {
         Citizen,
-        [EnumMember(Value = "Permanent Resident")]
         PermanentResident
     }
 }

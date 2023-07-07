@@ -13,7 +13,8 @@ namespace ProspaChallenge.Application.Models
         public string BusinessNumber { get; set; } = string.Empty;
         [JsonConverter(typeof(CurrencyConverter))]
         public decimal LoanAmount { get; set; } = new();
-        public CitizenshipStatus CitizenshipStatus { get; set; }
+        [JsonConverter(typeof(CitizenshipStatusConverter))]
+        public CitizenshipStatus? CitizenshipStatus { get; set; }
         public float TimeTrading { get; set; }
         public string CountryCode { get; set; } = string.Empty;
         public string Industry { get; set; } = string.Empty;
@@ -30,6 +31,8 @@ namespace ProspaChallenge.Application.Models
                 TimeTrading = TimeTrading,
                 CountryCode = CountryCode,
                 Industry = Industry,
+                CitizenshipStatus = CitizenshipStatus,
+                LoanAmount = LoanAmount
             };
         }
     }
