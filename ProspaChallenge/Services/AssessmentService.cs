@@ -23,7 +23,11 @@ namespace ProspaChallenge.Services
                     Decision = "Qualified"
                 };
 
-            var decision = validationResult.Errors.Select(x => x.CustomState).Contains("Unknown") ? "Unknown" : "Unqualified";
+            var decision = validationResult.Errors
+                .Select(x => x.CustomState.ToString())
+                .Any(state => string.IsNullOrEmpty(state) || state == "Unknown" || state == "Unqualified") ? 
+                    "Unqualified" : 
+                    "Qualified";
             return new AssessmentResult()
             {
                 Decision = decision,

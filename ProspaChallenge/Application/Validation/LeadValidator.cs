@@ -7,7 +7,7 @@ namespace ProspaChallenge.Application.Validation
 {
     public class LeadValidator : AbstractValidator<Lead>
     {
-        public LeadValidator(IPhoneRule phoneRule, ITimeTradingRule timeTradingRule, IBusinessNumberRule businessRule, IIndustryRule industryRule)
+        public LeadValidator(IPhoneRule phoneRule, ITimeTradingRule timeTradingRule, IBusinessNumberRule businessRule, IIndustryRule industryRule, ILoanAmountRule loanAmountRule)
         {
             RuleFor(lead => new { lead.FirstName, lead.LastName })
                 .Must(x => !string.IsNullOrEmpty(x.FirstName + x.LastName))
@@ -41,6 +41,13 @@ namespace ProspaChallenge.Application.Validation
                 timeTradingRule.IsQualifiedFor(timeTrading)
             )
                 .WithMessage("Out of range TimeTrading value")
+                .WithState(lead => "Unqualified");
+
+
+            RuleFor(lead => lead.LoanAmount).Must(loanAmount =>
+                loanAmountRule.IsQualifiedFor(loanAmount)
+            )
+                .WithMessage("Out of range LoanAmount value")
                 .WithState(lead => "Unqualified");
 
             RuleFor(lead => lead.BusinessNumber).MustAsync(

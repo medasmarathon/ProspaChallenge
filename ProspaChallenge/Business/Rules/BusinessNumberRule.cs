@@ -8,7 +8,7 @@ namespace ProspaChallenge.Business.Rules
     {
         public async Task<bool> IsQualifiedForAsync(string businessNumber)
         {
-            await Task.Delay(1000);
+            await Task.Delay(2000);
             return businessNumber.Length == 11 && Regex.IsMatch(businessNumber, @"^\d+$");
         }
 

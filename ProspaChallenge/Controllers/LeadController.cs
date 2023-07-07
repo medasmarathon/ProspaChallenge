@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 using ProspaChallenge.Application.Models;
 using ProspaChallenge.Business.Models;
 using ProspaChallenge.Services;
@@ -16,6 +17,7 @@ namespace ProspaChallenge.Controllers
             _assessmentService = assessmentService;
         }
         [HttpPost]
+        [OutputCache(PolicyName = "Assessment")]
         public async Task<JsonResult> Assessment(LeadRequest request)
         {
             if (!ModelState.IsValid)
@@ -25,5 +27,7 @@ namespace ProspaChallenge.Controllers
             var assessmentResult = await _assessmentService.Assess(request.ToLead());
             return Json(assessmentResult);
         }
+
     }
+
 }

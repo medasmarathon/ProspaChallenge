@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProspaChallenge", "ProspaChallenge\ProspaChallenge.csproj", "{A45BAA5A-072D-4158-A134-727EBD9CD5C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProspaChallenge.Test", "ProspaChallenge.Test\ProspaChallenge.Test.csproj", "{018E18BC-BA3D-47DF-BBF1-57BB467641AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A45BAA5A-072D-4158-A134-727EBD9CD5C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A45BAA5A-072D-4158-A134-727EBD9CD5C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A45BAA5A-072D-4158-A134-727EBD9CD5C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{018E18BC-BA3D-47DF-BBF1-57BB467641AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{018E18BC-BA3D-47DF-BBF1-57BB467641AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{018E18BC-BA3D-47DF-BBF1-57BB467641AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{018E18BC-BA3D-47DF-BBF1-57BB467641AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
