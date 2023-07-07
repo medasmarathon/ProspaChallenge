@@ -31,16 +31,16 @@ namespace ProspaChallenge.Test.Application.Models
 
             var result = request.ToLead();
 
-            result.FirstName.Should().Equals(request.FirstName);
-            result.LastName.Should().Equals(request.LastName);
-            result.EmailAddress.Should().Equals(request.EmailAddress);
-            result.PhoneNumber.Should().Equals(request.PhoneNumber);
-            result.BusinessNumber.Should().Equals(request.BusinessNumber);
-            result.TimeTrading.Should().Equals(request.TimeTrading);
-            result.CountryCode.Should().Equals(request.CountryCode);
-            result.Industry.Should().Equals(request.Industry);
-            result.CitizenshipStatus.Should().Equals(request.CitizenshipStatus);
-            result.LoanAmount.Should().Equals(request.LoanAmount);
+            result.FirstName.Should().Be(request.FirstName);
+            result.LastName.Should().Be(request.LastName);
+            result.EmailAddress.Should().Be(request.EmailAddress);
+            result.PhoneNumber.Should().Be(request.PhoneNumber);
+            result.BusinessNumber.Should().Be(request.BusinessNumber);
+            result.TimeTrading.Should().Be(request.TimeTrading);
+            result.CountryCode.Should().Be(request.CountryCode);
+            result.Industry.Should().Be(request.Industry);
+            result.CitizenshipStatus.Should().Be(request.CitizenshipStatus);
+            result.LoanAmount.Should().Be(request.LoanAmount);
         }
     }
 }
