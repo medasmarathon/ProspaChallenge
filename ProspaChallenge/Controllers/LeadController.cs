@@ -8,7 +8,6 @@ using ProspaChallenge.Services;
 
 namespace ProspaChallenge.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class LeadController : Controller
     {
@@ -20,6 +19,7 @@ namespace ProspaChallenge.Controllers
             _cache = cache;
         }
         [HttpPost]
+        [Route("api/lead/assessment")]
         public async Task<JsonResult> Assessment(LeadRequest request)
         {
             if (!ModelState.IsValid)
